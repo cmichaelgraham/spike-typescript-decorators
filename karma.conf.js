@@ -16,14 +16,14 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'test-main.js',
-      {pattern: './**/*.js', included: false},
-      {pattern: './test/**/*spec.js', included: false}
+      {pattern: 'aurelia-ts/**/*.js', included: false},
+      {pattern: 'tests/**/*spec.js', included: false}
     ],
 
 
     // list of files to exclude
     exclude: [
-      '*.xxx'
+      //'*.xxx'
     ],
 
 
