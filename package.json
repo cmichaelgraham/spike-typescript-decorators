@@ -1,0 +1,30 @@
+{
+  "name": "spike-typescript-decorators",
+  "version": "0.1.0",
+  "description": "a spike to experiment with typescript decorators",
+  "main": "index.js",
+  "dependencies": {
+    "karma": "^0.12.31"
+  },
+  "devDependencies": {
+    "karma": "^0.12.31"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmichaelgraham/spike-typescript-decorators.git"
+  },
+  "keywords": [
+    "typescript",
+    "decorators",
+    "aurelia"
+  ],
+  "author": "cmichaelgraham",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cmichaelgraham/spike-typescript-decorators/issues"
+  },
+  "homepage": "https://github.com/cmichaelgraham/spike-typescript-decorators"
+}
