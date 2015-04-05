@@ -13,6 +13,16 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
+        "./aurelia-ts/dependency-injection/container.ts",
+        "./aurelia-ts/dependency-injection/index.ts",
+        "./aurelia-ts/dependency-injection/metadata.ts",
+        "./aurelia-ts/lib.es6.d.ts",
+        "./aurelia-ts/metadata/decorator-applicator.ts",
+        "./aurelia-ts/metadata/decorators.ts",
+        "./aurelia-ts/metadata/index.ts",
+        "./aurelia-ts/metadata/metadata.ts",
+        "./aurelia-ts/metadata/origin.ts",
+        "./aurelia-ts/metadata/resource-type.ts",
         "./tests/dependency-injection/decorators.spec.ts",
         "./typings/jasmine.d.ts"
     ]
