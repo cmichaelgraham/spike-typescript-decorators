@@ -1,3 +1,16 @@
+var __decorate = this.__decorate || function (decorators, target, key, value) {
+    var kind = typeof (arguments.length == 2 ? value = target : value);
+    for (var i = decorators.length - 1; i >= 0; --i) {
+        var decorator = decorators[i];
+        switch (kind) {
+            case "function": value = decorator(value) || value; break;
+            case "number": decorator(target, key, value); break;
+            case "undefined": decorator(target, key); break;
+            case "object": value = decorator(target, key, value) || value; break;
+        }
+    }
+    return value;
+};
 var ParameterDecorators;
 (function (ParameterDecorators) {
     var A = (function () {
@@ -14,21 +27,19 @@ var ParameterDecorators;
         B.typeName = "type: class B";
         return B;
     })();
-    inject(A, B, "some key");
     var C = (function () {
         function C(a, b) {
         }
         C.injectMe = [];
+        C = __decorate([inject()], C);
         return C;
     })();
-    function inject() {
-        var rest = [];
-        for (var _i = 0; _i < arguments.length; _i++) {
-            rest[_i - 0] = arguments[_i];
-        }
+    function inject(types) {
         return function (target) {
-            target["inject"] = rest;
+            target["inject"] = ""; //rest;
         };
+    }
+    function parameterTypes() {
     }
     describe("decorators", function () {
         it("should inject dependency-injection keys", function () {

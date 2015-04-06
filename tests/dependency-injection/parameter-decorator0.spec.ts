@@ -9,17 +9,22 @@ module ParameterDecorators {
     public instanceTypeName = "instance: class B";
   }
 
-  @inject(A, B, "some key")
+  @inject()
   class C {
     static injectMe: Array<any> = [];
     constructor(a: A, b: B) {
     }
   }
 
-  function inject(...rest) {
+  @parameterTypes()
+  function inject(types:Function[]) {
     return function(target): void {
-      target["inject"] = rest;
+      target["inject"] = ""; //rest;
     }
+  }
+
+  function parameterTypes() {
+
   }
 
   describe("decorators", function() {

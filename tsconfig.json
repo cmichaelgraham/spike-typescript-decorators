@@ -25,6 +25,7 @@
         "./aurelia-ts/metadata/resource-type.ts",
         "./tests/dependency-injection/decorators.spec.ts",
         "./tests/dependency-injection/parameter-decorator.spec.ts",
+        "./tests/dependency-injection/parameter-decorator0.spec.ts",
         "./typings/jasmine.d.ts"
     ]
 }
