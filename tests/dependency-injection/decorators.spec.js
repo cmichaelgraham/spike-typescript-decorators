@@ -11,36 +11,35 @@ var __decorate = this.__decorate || function (decorators, target, key, value) {
     }
     return value;
 };
-var A = (function () {
-    function A() {
-        this.message = "identity: class A";
+var decorators;
+(function (decorators) {
+    var A = (function () {
+        function A() {
+            this.message = "identity: class A";
+        }
+        return A;
+    })();
+    var B = (function () {
+        function B() {
+            this.message = "identity: class B";
+        }
+        return B;
+    })();
+    var C = (function () {
+        function C(a, b) {
+        }
+        C.metadata = [];
+        C = __decorate([decoTest], C);
+        return C;
+    })();
+    function decoTest(target) {
+        target["metadata"].push(A, B); // how do i get this based on constructor ???
+        return target;
     }
-    return A;
-})();
-var B = (function () {
-    function B() {
-        this.message = "identity: class B";
-    }
-    return B;
-})();
-var D = (function () {
-    function D(a, b) {
-    }
-    D.metadata = [];
-    D = __decorate([decoTest], D);
-    return D;
-})();
-describe("decorators", function () {
-    it("should inject constructor types", function () {
-        var d = new D(new A(), new B());
-        expect(D.metadata.length).toBe(2);
+    describe("decorators", function () {
+        it("should inject constructor types", function () {
+            var c = new C(new A(), new B());
+            expect(C.metadata.length).toBe(2);
+        });
     });
-});
-function decoTest(target) {
-    var rest = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        rest[_i - 1] = arguments[_i];
-    }
-    target["metadata"].push(A, B); // how do i get this based on constructor ???
-    return target;
-}
+})(decorators || (decorators = {}));
