@@ -11,27 +11,22 @@ module ParameterDecorators {
 
   @inject()
   class C {
-    static injectMe: Array<any> = [];
+    static inject: Array<any> = [];
     constructor(a: A, b: B) {
     }
   }
 
-  @parameterTypes()
-  function inject(types:Function[]) {
+  function inject(@paramtypes types?:Function[]) {
     return function(target): void {
-      target["inject"] = ""; //rest;
+      target["inject"] = types; //rest;
     }
-  }
-
-  function parameterTypes() {
-
   }
 
   describe("decorators", function() {
     it("should inject dependency-injection keys", function() {
       var c = new C(new A(), new B());
       console.log("injectMe:");
-      for (let parm of C.injectMe) {
+      for (let parm of C.inject) {
         if (typeof(parm) === "function") {
           console.log("\t" + parm["typeName"]);
         } else {

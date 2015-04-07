@@ -30,22 +30,20 @@ var ParameterDecorators;
     var C = (function () {
         function C(a, b) {
         }
-        C.injectMe = [];
+        C.inject = [];
         C = __decorate([inject()], C);
         return C;
     })();
     function inject(types) {
         return function (target) {
-            target["inject"] = ""; //rest;
+            target["inject"] = types; //rest;
         };
-    }
-    function parameterTypes() {
     }
     describe("decorators", function () {
         it("should inject dependency-injection keys", function () {
             var c = new C(new A(), new B());
             console.log("injectMe:");
-            for (var _i = 0, _a = C.injectMe; _i < _a.length; _i++) {
+            for (var _i = 0, _a = C.inject; _i < _a.length; _i++) {
                 var parm = _a[_i];
                 if (typeof (parm) === "function") {
                     console.log("\t" + parm["typeName"]);
